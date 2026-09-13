@@ -21,9 +21,7 @@ export const config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [
-        // ToDo: define location for spec files here
-    ],
+    specs: ['./test/specs/**/*.js'],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -44,19 +42,19 @@ export const config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android',
-        browserName: 'Chrome',
-        'appium:deviceName': 'Android GoogleAPI Emulator',
-        'appium:platformVersion': '12.0',
-        'appium:automationName': 'UiAutomator2'
+        'appium:automationName': 'UiAutomator2',
+        'appium:deviceName': 'emulator-5554',
+        'appium:app': 'C:/Users/gustavo.cabrera/Downloads/android.wdio.native.app.v2.2.0.apk', // 
+        'appium:appActivity': 'com.wdiodemoapp.MainActivity',
+        'appium:noReset': false // false = reinstala/limpia la app en cada corrida completa
     }],
 
     //
