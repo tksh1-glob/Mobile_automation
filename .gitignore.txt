@@ -1,0 +1,26 @@
+# Dependencias de Node
+node_modules/
+
+# Logs de npm/errores
+npm-debug.log*
+*.log
+
+# Reportes y resultados de las pruebas de WebdriverIO
+allure-results/
+allure-report/
+.wdio.cache/
+wdio-logs/
+
+# El APK no debería ir al repo (pesa mucho y no es "código")
+*.apk
+
+# Archivos de configuración local o variables de entorno
+.env
+
+# Archivos propios de Windows
+Thumbs.db
+desktop.ini
+
+# Archivos del editor
+.vscode/
+.idea/
