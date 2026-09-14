@@ -1,16 +1,11 @@
-# Dependencias de Node
-node_modules/
+# Build output de Maven
+target/
 
-# Logs de npm/errores
-npm-debug.log*
+# Logs
 *.log
 
-# Reportes y resultados de las pruebas de WebdriverIO
-allure-results/
-allure-report/
-.wdio.cache/
-wdio-logs/
-.claude/
+# Reportes de test (TestNG/Surefire ya quedan bajo target/, esto cubre otros)
+test-output/
 
 # El APK no debería ir al repo (pesa mucho y no es "código")
 *.apk
@@ -22,6 +17,16 @@ wdio-logs/
 Thumbs.db
 desktop.ini
 
-# Archivos del editor
+# IDEs
+.idea/
+*.iml
 .vscode/
-.idea/000
+.classpath
+.project
+.settings/
+
+# Claude Code (config/instrucciones locales, no debe ir al repo)
+.claude/
+.claudeignore
+CLAUDE.md
+.mcp.json
