@@ -17,6 +17,8 @@ describe('Inicio de sesión (Login)', () => {
     await expect(SignupPage.successAlertMessage).toBeDisplayed();
     await SignupPage.dismissSuccessAlert();
 
+    // El signup no navega automáticamente de vuelta a Login.
+    await HomePage.goToLogin();
     await LoginPage.login(email, password);
 
     await expect(LoginPage.successAlertMessage).toBeDisplayed();

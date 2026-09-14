@@ -1,7 +1,7 @@
 const Page = require('./page');
 
 class SwipePage extends Page {
-  get screenTitle() { return $('android=new UiSelector().textContains("Swipe horizontal")'); }
+  get screenTitle() { return $('~Swipe-screen'); }
   get foundMeText() { return $('android=new UiSelector().textContains("You found me")'); }
 
   card(index) {

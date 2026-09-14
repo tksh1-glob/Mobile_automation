@@ -1,6 +1,7 @@
 const Page = require('./page');
 
 class HomePage extends Page {
+  get screenTitle() { return $('~Home-screen'); }
   get homeTab() { return $('~Home'); }
   get loginTab() { return $('~Login'); }
   get formsTab() { return $('~Forms'); }
@@ -8,6 +9,7 @@ class HomePage extends Page {
   get dragTab() { return $('~Drag'); }
   get webviewTab() { return $('~Webview'); }
 
+  async goToHome() { await this.waitAndClick('~Home'); }
   async goToLogin() { await this.waitAndClick('~Login'); }
   async goToForms() { await this.waitAndClick('~Forms'); }
   async goToSwipe() { await this.waitAndClick('~Swipe'); }

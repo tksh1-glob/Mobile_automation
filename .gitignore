@@ -10,6 +10,7 @@ allure-results/
 allure-report/
 .wdio.cache/
 wdio-logs/
+.claude/
 
 # El APK no debería ir al repo (pesa mucho y no es "código")
 *.apk

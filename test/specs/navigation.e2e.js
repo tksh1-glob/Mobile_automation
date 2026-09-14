@@ -2,13 +2,17 @@ const HomePage = require('../pageobjects/home.page');
 const LoginPage = require('../pageobjects/login.page');
 const FormsPage = require('../pageobjects/forms.page');
 const SwipePage = require('../pageobjects/swipe.page');
+const DragPage = require('../pageobjects/drag.page');
 const WebviewPage = require('../pageobjects/webview.page');
 
 describe('Navegación del menú inferior', () => {
 
   beforeEach(async () => {
-    // Nos aseguramos de arrancar siempre desde Home
+    // activateApp solo trae la app a primer plano, no la reinicia en Home,
+    // así que forzamos la navegación a Home explícitamente.
     await driver.activateApp('com.wdiodemoapp');
+    await HomePage.goToHome();
+    await expect(HomePage.screenTitle).toBeDisplayed();
   });
 
   it('debe mostrar correctamente la sección Login', async () => {
@@ -32,6 +36,12 @@ describe('Navegación del menú inferior', () => {
   it('debe mostrar correctamente la sección Webview', async () => {
     await HomePage.goToWebview();
     await expect(WebviewPage.screenTitle).toBeDisplayed();
+  });
+
+  it('debe mostrar correctamente la sección Drag', async () => {
+    await HomePage.goToDrag();
+    await expect(DragPage.screenTitle).toBeDisplayed();
+    await expect(DragPage.firstDraggable).toBeDisplayed();
   });
 
 });
